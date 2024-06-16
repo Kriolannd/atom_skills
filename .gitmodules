@@ -1,0 +1,6 @@
+[submodule "atom_skills_back"]
+	path = atom_skills_back
+	url = git@gitlab.askills.ru:team6/atom_skills_back.git
+[submodule "atom_skills_front"]
+	path = atom_skills_front
+	url = git@gitlab.askills.ru:team6/atom_skills_front.git
