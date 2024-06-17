@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: standalone_frontend
+    build: ./atom_skills_front/
+    depends_on:
+      - backend
+    ports:
+      - 5173:5173
+
+  backend:
+    container_name: standalone_backend
+    build: ./atom_skills_back/
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db/atomskills
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+    ports:
+      - 8080:8080
+
+  db:
+    image: 'mirror.gcr.io/postgres:latest'
+    container_name: standalone_db
+    environment: 
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=atomskills
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+  pg_admin:
+    image: 'mirror.gcr.io/dpage/pgadmin4:latest'
+    container_name: standalone_pg_admin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=barsegyan.k.2017@mail.ru
+      - PGADMIN_DEFAULT_PASSWORD=postgres
+    ports: 
+      - 8000:8080
+      - 80:80
+    depends_on:
+      - backend
+    restart: unless-stopped
+    
