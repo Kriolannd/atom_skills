@@ -4,3 +4,9 @@
 [submodule "atom_skills_front"]
 	path = atom_skills_front
 	url = git@gitlab.askills.ru:team6/atom_skills_front.git
+[submodule "atom_docs"]
+	path = atom_docs
+	url = git@gitlab.askills.ru:team6/atom_docs.git
+[submodule "atom_user_docs"]
+	path = atom_user_docs
+	url = git@gitlab.askills.ru:team6/atom_user_docs.git
