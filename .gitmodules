@@ -4,3 +4,9 @@
 [submodule "atom_skills_back"]
 	path = atom_skills_back
 	url = git@github.com:Kriolannd/atom_skills_back.git
+[submodule "atom_user_docs"]
+	path = atom_user_docs
+	url = git@github.com:Kriolannd/atom_user_docs.git
+[submodule "atom_docs"]
+	path = atom_docs
+	url = git@github.com:Kriolannd/atom_docs.git
