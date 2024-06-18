@@ -9,6 +9,18 @@ services:
     ports:
       - 5173:5173
 
+  user_docs:
+    container_name: standalone_user_docs
+    build: ./atom_user_docs/
+    ports:
+      - 8082:8080
+
+  tech_docs:
+    container_name: standalone_tech_docs
+    build: ./atom_docs/
+    ports:
+      - 8081:8080
+
   backend:
     container_name: standalone_backend
     build: ./atom_skills_back/
@@ -40,7 +52,6 @@ services:
       - PGADMIN_DEFAULT_EMAIL=barsegyan.k.2017@mail.ru
       - PGADMIN_DEFAULT_PASSWORD=postgres
     ports: 
-      - 8000:8080
       - 80:80
     depends_on:
       - backend
