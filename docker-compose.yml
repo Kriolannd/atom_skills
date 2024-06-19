@@ -1,26 +1,25 @@
 version: "3.8"
 
 services:
-  #frontend:
-  #  container_name: standalone_frontend
-  #  build: ./atom_skills_front/
-  #  depends_on:
-  #    - backend
-  #  ports:
-  #    - 8081:8080
-
-  #tech_docs:
-  #  container_name: standalone_tech_docs
-  #  build: ./atom_docs
-  #  ports:
-  #    - 8082:8080
-  #
-  #user_docs:
-  #  container_name: standalone_user_docs
-  #  build: ./atom_user_docs
-  #  ports:
-  #    - 8083:8080
-
+  frontend:
+    container_name: standalone_frontend
+    build: ./atom_skills_front/
+    depends_on:
+      - backend
+    ports:
+      - 8081:8080
+  tech_docs:
+    container_name: standalone_tech_docs
+    build: ./atom_docs
+    ports:
+      - 8082:8080
+  
+  user_docs:
+    container_name: standalone_user_docs
+    build: ./atom_user_docs
+    ports:
+      - 8083:8080
+      
   backend:
     container_name: standalone_backend
     build: ./atom_skills_back/
