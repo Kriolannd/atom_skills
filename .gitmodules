@@ -10,3 +10,6 @@
 [submodule "atom_user_docs"]
 	path = atom_user_docs
 	url = git@gitlab.askills.ru:team6/atom_user_docs.git
+[submodule "atom_api"]
+	path = atom_api
+	url = git@gitlab.askills.ru:team6/atom_api.git
